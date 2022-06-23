@@ -8,7 +8,7 @@ import emoji
 import json
 import psycopg2
 
-prefix = os.getenv('DISCORD_BOT_PREFIX', default='::')
+prefix = os.getenv('DISCORD_BOT_PREFIX', default='🦑')
 token = os.environ['DISCORD_BOT_TOKEN']
 voicevox_key = os.environ['VOICEVOX_KEY']
 voicevox_speaker = os.getenv('VOICEVOX_SPEAKER', default='2')
