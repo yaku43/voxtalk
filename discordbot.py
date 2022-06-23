@@ -34,7 +34,7 @@ async def on_guild_remove(guild):
 
 @client.command()
 async def 接続(ctx):
-    """text_channel_id = ctx.channel.id"""
+   # text_channel_id = ctx.channel.id
     if ctx.message.guild:
         if ctx.author.voice is None:
             await ctx.send('ボイスチャンネルに接続してから呼び出してください。')
@@ -110,7 +110,7 @@ async def 辞書確認(ctx):
 @client.event
 async def on_message(message):
        if message.guild.voice_client:
-         """if message.channel.id == text_channel_id:"""
+         #if message.channel.id == text_channel_id:
             if not message.author.bot:
                 if not message.content.startswith(prefix):
                     text = message.content
