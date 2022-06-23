@@ -34,6 +34,7 @@ async def on_guild_remove(guild):
 
 @client.command()
 async def 接続(ctx):
+    text_channel_id = ctx.channel.id
     if ctx.message.guild:
         if ctx.author.voice is None:
             await ctx.send('ボイスチャンネルに接続してから呼び出してください。')
@@ -108,6 +109,7 @@ async def 辞書確認(ctx):
 
 @client.event
 async def on_message(message):
+    if message.channel.id == text_channel_id:
         if message.guild.voice_client:
             if not message.author.bot:
                 if not message.content.startswith(prefix):
@@ -191,7 +193,7 @@ async def on_message(message):
                         await asyncio.sleep(0.5)
                     source = await discord.FFmpegOpusAudio.from_probe(mp3url)
                     message.guild.voice_client.play(source)
-        await client.process_commands(message)
+    await client.process_commands(message)
         
 """
 @client.event
