@@ -110,7 +110,7 @@ async def 辞書確認(ctx):
 @client.event
 async def on_message(message):
        if message.guild.voice_client:
-         if message.channel.id == text_channel_id:
+         """if message.channel.id == text_channel_id:"""
             if not message.author.bot:
                 if not message.content.startswith(prefix):
                     text = message.content
