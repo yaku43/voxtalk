@@ -47,7 +47,6 @@ async def 接続(ctx):
                     await ctx.author.voice.channel.connect()
             else:
                 await ctx.author.voice.channel.connect()
-                text_channel_id = ctx.channel.id
 
 @client.command()
 async def 切断(ctx):
@@ -109,7 +108,6 @@ async def 辞書確認(ctx):
 
 @client.event
 async def on_message(message):
-    if message.channel.id == text_channel_id:
         if message.guild.voice_client:
             if not message.author.bot:
                 if not message.content.startswith(prefix):
